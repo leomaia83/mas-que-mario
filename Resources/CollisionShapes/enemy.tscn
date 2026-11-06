@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b7xy8w28373rv"]
+
+[ext_resource type="Script" uid="uid://bc8rivvy03nv7" path="res://enemy.gd" id="1_uokd3"]
+[ext_resource type="PackedScene" uid="uid://c6ffo8gflaf57" path="res://koopa.tscn" id="2_x6loh"]
+[ext_resource type="PackedScene" uid="uid://d0ogq1meettrs" path="res://goomba.tscn" id="3_o1g4i"]
+
+[node name="Enemy" type="Area2D" unique_id=1474432420]
+z_index = 2
+script = ExtResource("1_uokd3")
+min_time = null
+max_time = null
+speed = null
+fall_gravity = null
+
+[node name="Koopa" parent="." unique_id=1043716591 instance=ExtResource("2_x6loh")]
+z_index = 5
+
+[node name="Goomba" parent="." unique_id=332230395 instance=ExtResource("3_o1g4i")]
+z_index = 5

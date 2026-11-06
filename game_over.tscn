@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bxqba8oo7mrsr"]
+
+[ext_resource type="Script" uid="uid://cvj3i4khcndts" path="res://game_over.gd" id="1_y26ei"]
+
+[node name="game_over" type="ColorRect" unique_id=517486690]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.011764706, 0.03529412, 0.011764706, 1)
+script = ExtResource("1_y26ei")
+
+[node name="Label" type="Label" parent="." unique_id=1999864523]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 32
+text = "GAME OVER!"

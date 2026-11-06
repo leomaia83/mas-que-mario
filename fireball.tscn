@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://q0nvxwjhevg4"]
+
+[ext_resource type="Script" uid="uid://di30v88ci0qgw" path="res://fireball.gd" id="1_olwj8"]
+[ext_resource type="Texture2D" uid="uid://dh5esgp3g54rg" path="res://coin.png" id="1_sf4mh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olwj8"]
+atlas = ExtResource("1_sf4mh")
+region = Rect2(0, 0, 100, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdani"]
+atlas = ExtResource("1_sf4mh")
+region = Rect2(100, 0, 100, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nix7o"]
+atlas = ExtResource("1_sf4mh")
+region = Rect2(200, 0, 100, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4vqi"]
+atlas = ExtResource("1_sf4mh")
+region = Rect2(300, 0, 100, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lk87q"]
+atlas = ExtResource("1_sf4mh")
+region = Rect2(400, 0, 100, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gveuj"]
+atlas = ExtResource("1_sf4mh")
+region = Rect2(500, 0, 100, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_smijy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olwj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdani")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nix7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4vqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lk87q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gveuj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_olwj8"]
+radius = 8.062258
+
+[node name="Fireball" type="Area2D" unique_id=1309908487]
+z_index = 10
+collision_layer = 0
+collision_mask = 6
+script = ExtResource("1_olwj8")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1600012399]
+position = Vector2(-0.99999994, 9.999999)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_smijy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1245464818]
+light_mask = 4
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_olwj8")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
